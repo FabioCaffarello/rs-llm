@@ -1,0 +1,18 @@
+services:
+  rs-llm:
+    image: fabiocaffarello/rs-llm:latest
+    container_name: rs-llm
+    ports:
+      - 8888:8888
+    volumes:
+      - ./data:/app/data
+      - ./configs:/app/configs
+    # env_file:
+    #   - envs/.env
+    networks:
+      - rs-llm-network
+
+networks:
+  rs-llm-network:
+    name: rs-llm-network
+    driver: bridge

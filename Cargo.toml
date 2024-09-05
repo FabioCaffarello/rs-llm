@@ -1,0 +1,11 @@
+[package]
+name = "rs-llm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pyo3 = "0.22.2"
+
+
+[lib]
+path = "rs_rag/src/lib.rs"

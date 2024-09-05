@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "rs_llm"
+version = "0.1.0"
+description = ""
+authors = [ "FabioCaffarello <fabio.caffarello@gmail.com>" ]
+readme = "README.md"
+
+    [[tool.poetry.packages]]
+    include = "rs_llm"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+maturin = "^1.7.1"
+python-json-logger = "^2.0.7"
+pypdf2 = "^3.0.1"
+tiktoken = "^0.7.0"
+
+
+[build-system]
+requires = ["maturin>=1.4,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "rs_llm"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version"]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
