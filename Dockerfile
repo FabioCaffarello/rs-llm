@@ -1,12 +1,13 @@
 # Stage 1: Build stage
 FROM python:3.11-slim AS builder
 
-# Install necessary build dependencies
+# Install necessary build dependencies, including pkg-config and OpenSSL development libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     gcc \
     libssl-dev \
     libffi-dev \
+    pkg-config \
     curl \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -36,7 +37,7 @@ RUN poetry install --no-root --no-dev && \
 # Stage 2: Runtime stage
 FROM python:3.11-slim AS runtime
 
-# Install runtime dependencies (if needed)
+# Install runtime dependencies, including OpenSSL development libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libssl-dev \
     libffi-dev \
