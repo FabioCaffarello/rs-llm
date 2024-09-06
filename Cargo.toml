@@ -5,7 +5,12 @@ edition = "2021"
 
 [dependencies]
 pyo3 = "0.22.2"
-
+serde_json = "1.0.128"
+langchain-rust = { version = "4.4.1", features = ["qdrant", "fastembed"] }
+tokio = { version = "1", features = ["full"] }
+regex = "1.5"
+async-trait = "0.1"
+futures = "0.3"
 
 [lib]
 path = "rs_rag/src/lib.rs"
