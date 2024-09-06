@@ -1,6 +1,7 @@
 use pyo3::prelude::*;
 
 mod embeddings;
+mod semantic_chunker;
 
 use embeddings::TextEmbedder;
 

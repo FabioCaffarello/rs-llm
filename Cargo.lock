@@ -2840,8 +2840,11 @@ dependencies = [
 name = "rs-llm"
 version = "0.1.0"
 dependencies = [
+ "async-trait",
+ "futures",
  "langchain-rust",
  "pyo3",
+ "regex",
  "serde_json",
  "tokio",
 ]
